@@ -8,7 +8,10 @@ import sys
 import datetime
 import time
 import subprocess
-
+try:
+    import requests
+except:
+    os.system("pip install requests flask")
 def uptime1():
     raw = subprocess.check_output('uptime').decode("utf8").replace(',', '')
     days = int(raw.split()[2])
